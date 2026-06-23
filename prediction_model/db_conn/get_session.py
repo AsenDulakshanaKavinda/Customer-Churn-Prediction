@@ -1,5 +1,5 @@
 from contextlib import contextmanager
-from db_conn.db_manager import DatabaseManager, Base
+from db_conn.db_manager import DatabaseManager
 
 # A helper function to safely handle sessions
 @contextmanager
