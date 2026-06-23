@@ -13,7 +13,6 @@ class DatabaseManager:
             print("Initializing SQLAlchemy Engine...")
             cls._instance = super().__new__(cls)
 
-        
         DATABASE_URL = os.getenv("DATABASE_URL", "postgresql+psycopg://admin:password@localhost:5432/DB")
         print(DATABASE_URL)
 

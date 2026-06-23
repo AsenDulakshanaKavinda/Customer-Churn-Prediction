@@ -1,10 +1,13 @@
-from db_conn.db_manager import Base, DatabaseManager
-
+from db_conn.db_manager import DatabaseManager, Base
+from db_conn.models import UserTest
 
 def main():
     print("Hello from prediction-model!")
 
+
+
 def init_db():
+    # from db_conn.models import UserTest
     db = DatabaseManager()
     # This looks at 'Base' and creates all tables that inherit from it
     Base.metadata.create_all(bind=db.engine)
