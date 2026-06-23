@@ -1,8 +1,9 @@
 from db_conn.db_manager import DatabaseManager, Base
 from db_conn.models import UserTest
+from utils import log
 
 def main():
-    print("Hello from prediction-model!")
+    log.info("Hello from prediction-model!")
 
 
 
@@ -14,4 +15,5 @@ def init_db():
     print("Tables created successfully!")
 
 if __name__ == "__main__":
-    init_db()
+    main()
+    
