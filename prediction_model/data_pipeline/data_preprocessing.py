@@ -18,12 +18,13 @@ class DataPreprocessing:
     @handle_errors("one hot encoding", 20002)
     def one_hot_encoding(self, dataset: DataFrame) -> DataFrame:
         log.info("Performing one hot encoding")
+        df_encoded = dataset.copy()
         ct = ColumnTransformer(
             transformers=[
                 ("onehot", OneHotEncoder(sparse_output=False), self.categorical_colms)
             ]
         )
-        encoded_array = ct.fit_transform(dataset)
+        encoded_array = ct.fit_transform(df_encoded)
         rebuild_dataset = pd.DataFrame(
             encoded_array, columns=ct.get_feature_names_out()
         )
