@@ -9,14 +9,14 @@ from utils import handle_errors
 
 class ChurnDataset(Dataset):
     @handle_errors("Init churn dataset", 20004)
-    def __init__(self, dataset: DataFrame, target_column: str) -> None:
-        self.dataset = dataset
-        self.X = self.dataset.drop(target_column).values
-        self.y = self.dataset[target_column].values
+    def __init__(self, dataframe: DataFrame, target_column: str) -> None:
+        self.data = dataframe
+        self.X = self.data.drop(target_column).values
+        self.y = self.data[target_column].values
 
     @handle_errors("Dataset length", 20004)
     def __len__(self):
-        return len(self.dataset)
+        return len(self.data)
 
     @handle_errors("Get items from dataset", 20004)
     def __getitem__(self, index):
