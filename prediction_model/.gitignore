@@ -219,3 +219,7 @@ __marimo__/
 
 # data
 data
+
+# mlflow
+mlruns
+mlflow.db
