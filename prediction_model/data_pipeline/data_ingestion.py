@@ -5,7 +5,7 @@ from sqlalchemy import Engine
 from utils import handle_errors, log
 
 
-class DataIngesion:
+class DataIngestion:
     def __init__(self, query: str, engine: Engine):
         self.query = query
         self.engine = engine

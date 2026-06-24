@@ -12,7 +12,7 @@ class CreateDataLoaders:
         self.data = dataset
 
     @handle_errors("create data loaders", 20005)
-    def create_data_loaders(self):
+    def create_data_loaders(self) -> tuple[DataLoader, DataLoader, DataLoader]:
 
         total_size = len(self.data)
         train_size = int(0.80 * total_size)
