@@ -22,7 +22,8 @@ class DataPreprocessing:
         ct = ColumnTransformer(
             transformers=[
                 ("onehot", OneHotEncoder(sparse_output=False), self.categorical_colms)
-            ]
+            ],
+            remainder='passthrough'
         )
         encoded_array = ct.fit_transform(df_encoded)
         rebuild_dataset = pd.DataFrame(

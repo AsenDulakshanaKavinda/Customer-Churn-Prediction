@@ -1,6 +1,7 @@
 from db_conn.db_manager import DatabaseManager, Base
 from db_conn.models import UserTest
 from utils import log
+from data_pipeline.pipeline import init_data_pipeline
 
 def main():
     log.info("Hello from prediction-model!")
@@ -15,5 +16,7 @@ def init_db():
     print("Tables created successfully!")
 
 if __name__ == "__main__":
+    init_db()
+    init_data_pipeline()
     main()
     
