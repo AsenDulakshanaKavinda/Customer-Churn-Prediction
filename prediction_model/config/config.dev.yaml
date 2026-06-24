@@ -1,0 +1,3 @@
+test_model:
+  model_name: some name
+  model_path: some path
